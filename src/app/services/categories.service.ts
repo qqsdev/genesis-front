@@ -33,4 +33,10 @@ export class CategoriesService {
       });
     }
   }
+
+  public save(category: Category) {
+    return this.api.categories.create(category).subscribe(() => {
+      this.fetch();
+    });
+  }
 }
