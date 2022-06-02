@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CategoriesService } from 'src/app/services/categories.service';
 
 @Component({
   selector: 'app-addform',
@@ -9,9 +11,18 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class AddformComponent implements OnInit {
   public form: FormGroup = new FormGroup({
     id: new FormControl(),
+    name: new FormControl('', Validators.required),
+    url: new FormControl(),
   });
 
-  constructor() {}
+  constructor(private service: CategoriesService, private router: Router) {}
 
   ngOnInit(): void {}
+
+  public save() {
+    if (this.form.valid) {
+      this.service.save(this.form.value);
+      this.router.navigate(['/']);
+    }
+  }
 }

@@ -8,6 +8,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -39,6 +40,7 @@ import { AddformComponent } from './categories/addform/addform.component';
     MatProgressSpinnerModule,
     MatFormFieldModule,
     ReactiveFormsModule,
+    MatInputModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

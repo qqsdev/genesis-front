@@ -1,10 +1,27 @@
+<h2>Add new category</h2>
+
 <form [formGroup]="form">
   <p>
     <mat-form-field appearance="outline">
-      <mat-label>Outline form field</mat-label>
-      <input formControlName="id" matInput placeholder="Placeholder" />
-      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-      <mat-hint>Hint</mat-hint>
+      <mat-label>Id</mat-label>
+      <input formControlName="id" matInput placeholder="Id" />
     </mat-form-field>
   </p>
+
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput placeholder="Name" />
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Image URL</mat-label>
+      <input formControlName="url" matInput placeholder="Image URL" />
+    </mat-form-field>
+  </p>
+
+  <button mat-raised-button color="primary" type="submit" (click)="save()">Save</button>
+  <button mat-raised-button type="button">Cancel</button>
 </form>
