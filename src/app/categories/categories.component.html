@@ -1,3 +1,7 @@
+<div>
+  <a routerLink="/categories/add">Add New category</a>
+</div>
+
 <ng-container *ngIf="!(isLoading$ | async); else loading">
   <div class="categories">
     <ng-container *ngFor="let category of categories$ | async">

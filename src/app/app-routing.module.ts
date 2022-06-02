@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AddformComponent } from './categories/addform/addform.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { LayoutComponent } from './layout/layout.component';
 import { ProductsComponent } from './products/products.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
         path: '',
         component: CategoriesComponent,
       },
+      { path: 'categories/add', component: AddformComponent },
       {
         path: 'products',
         component: ProductsComponent,
