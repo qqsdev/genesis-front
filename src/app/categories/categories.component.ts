@@ -1,12 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../services/api-services/api.service';
+import { BehaviorSubject } from 'rxjs';
+import { Category } from '../models/category';
 import { CategoriesService } from '../services/categories.service';
-
-interface Category {
-  name: string;
-  url: string;
-  id: number;
-}
 
 @Component({
   selector: 'app-categories',
@@ -14,27 +9,16 @@ interface Category {
   styleUrls: ['./categories.component.scss'],
 })
 export class CategoriesComponent implements OnInit {
-  public isLoading: boolean = false;
-  public categories: Category[] = [];
+  public isLoading: BehaviorSubject<boolean> = this.service.isLoading;
+  public categories: BehaviorSubject<Category[]> = this.service.categories;
 
-  constructor(private api: ApiService) {}
+  constructor(private service: CategoriesService) {}
 
   public ngOnInit(): void {
-    this.isLoading = true;
-
-    this.api.categories.getAll().subscribe((data) => {
-      this.categories = data;
-      this.isLoading = false;
-    });
+    this.service.fetch();
   }
 
   public remove(category: Category) {
-    if (confirm('Are you sure?')) {
-      this.isLoading = true;
-      this.api.categories.remove(category.id).subscribe((data) => {
-        this.categories = data;
-        this.isLoading = false;
-      });
-    }
+    this.service.remove(category);
   }
 }

@@ -1,42 +1,36 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
+import { Category } from '../models/category';
+import { ApiService } from './api-services/api.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CategoriesService {
-  public products = [
-    {
-      name: 'Еда',
-      url: 'assets/images/food.jpg',
-    },
-  ];
+  public isLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+    false
+  );
+  public categories: BehaviorSubject<Category[]> = new BehaviorSubject<
+    Category[]
+  >([]);
 
-  public categories = [
-    {
-      name: 'Еда',
-      url: 'assets/images/food.jpg',
-    },
-    {
-      name: 'Молочные продукты',
-      url: 'assets/images/milk.jpg',
-    },
-    {
-      name: 'Цветы',
-      url: 'assets/images/flowers.jpg',
-    },
-    {
-      name: 'Книги',
-      url: 'assets/images/books.jpg',
-    },
-    {
-      name: 'Электроника',
-      url: 'assets/images/electronics.jpeg',
-    },
-    {
-      name: 'Игрушки',
-      url: 'assets/images/Toys.jpg',
-    },
-  ];
+  constructor(private api: ApiService) {}
 
-  constructor() {}
+  public fetch() {
+    this.isLoading.next(true);
+    this.api.categories.getAll().subscribe((data) => {
+      this.categories.next(data);
+      this.isLoading.next(false);
+    });
+  }
+
+  public remove(category: Category) {
+    if (confirm('Are you sure?')) {
+      this.isLoading.next(true);
+      this.api.categories.remove(category.id).subscribe((data) => {
+        this.categories.next(data);
+        this.isLoading.next(false);
+      });
+    }
+  }
 }
