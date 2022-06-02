@@ -1,0 +1,61 @@
+$placeholder-opacity-max: 0.3;
+$placeholder-opacity-min: 0.1;
+$black: #222;
+
+.placeholder {
+  display: inline-block;
+  min-height: 1em;
+  vertical-align: middle;
+  background-color: currentColor;
+  border-radius: 4px;
+  opacity: $placeholder-opacity-max;
+  cursor: wait;
+}
+
+button.placeholder::before {
+  display: inline-block;
+  content: '';
+}
+
+// Sizing
+.placeholder-xs {
+  min-height: 0.6em;
+}
+
+.placeholder-sm {
+  min-height: 0.8em;
+}
+
+.placeholder-lg {
+  min-height: 1.5em;
+}
+
+// Animation
+.placeholder-glow {
+  .placeholder {
+    animation: placeholder-glow 2s ease-in-out infinite;
+  }
+}
+
+@keyframes placeholder-glow {
+  50% {
+    opacity: $placeholder-opacity-min;
+  }
+}
+
+.placeholder-wave {
+  mask-image: linear-gradient(
+    130deg,
+    $black 55%,
+    rgba(0, 0, 0, (1 - $placeholder-opacity-min)) 75%,
+    $black 95%
+  );
+  mask-size: 200% 100%;
+  animation: placeholder-wave 2s linear infinite;
+}
+
+@keyframes placeholder-wave {
+  100% {
+    mask-position: -200% 0%;
+  }
+}

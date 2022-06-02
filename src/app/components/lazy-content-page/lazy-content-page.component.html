@@ -1,0 +1,20 @@
+<ng-container *ngIf="!loading; else loadingTemplate || defaultLoadingTemplate">
+  <ng-container *ngIf="list && list.length; else emptyTemplate || defaultEmptyTemplate">
+    <ng-content *ngIf="!listTemplate" [context]="list"></ng-content>
+    <ng-container *ngIf="listTemplate" [ngTemplateOutlet]="listTemplate" [ngTemplateOutletContext]="{ data: list }">
+    </ng-container>
+  </ng-container>
+</ng-container>
+
+<ng-template #defaultLoadingTemplate>
+  <mat-progress-bar mode="query"></mat-progress-bar>
+</ng-template>
+
+<ng-template #defaultEmptyTemplate>
+  <div class="empty-page">
+    <h2 class="empty-page__header">
+      <mat-icon>description</mat-icon>
+      {{ emptyMesasage || 'This page is empty' }}
+    </h2>
+  </div>
+</ng-template>

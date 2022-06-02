@@ -10,6 +10,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,7 +18,9 @@ import { LayoutComponent } from './layout/layout.component';
 import { SideNavComponent } from './side-nav/side-nav.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ProductsComponent } from './products/products.component';
-import { AddformComponent } from './categories/addform/addform.component';
+import { CategoryDetailsComponent } from './categories/category-details/category-details.component';
+import { CategoryFormComponent } from './categories/category-form/category-form.component';
+import { LazyContentPageComponent } from './components/lazy-content-page/lazy-content-page.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import { AddformComponent } from './categories/addform/addform.component';
     SideNavComponent,
     CategoriesComponent,
     ProductsComponent,
-    AddformComponent,
+    CategoryDetailsComponent,
+    CategoryFormComponent,
+    LazyContentPageComponent,
   ],
   imports: [
     BrowserModule,
@@ -41,6 +46,7 @@ import { AddformComponent } from './categories/addform/addform.component';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

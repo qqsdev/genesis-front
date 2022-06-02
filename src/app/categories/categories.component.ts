@@ -4,7 +4,7 @@ import { Category } from '../models/category';
 import { CategoriesService } from '../services/categories.service';
 
 @Component({
-  selector: 'app-categories',
+  selector: 'genesis-categories',
   templateUrl: './categories.component.html',
   styleUrls: ['./categories.component.scss'],
 })

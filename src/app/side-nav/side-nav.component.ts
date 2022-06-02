@@ -7,6 +7,7 @@ import { CategoriesService } from '../services/categories.service';
   styleUrls: ['./side-nav.component.scss'],
 })
 export class SideNavComponent implements OnInit {
+  public loading$ = this.categoriesService.isLoading$;
   public categories$ = this.categoriesService.categories$;
 
   constructor(private categoriesService: CategoriesService) {}

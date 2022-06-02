@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { delay } from 'rxjs/operators';
-import { FAKE_CATEGORIES, FakeDataService } from 'src/app/data/fake-data';
+import { FAKE_CATEGORIES } from 'src/app/data/fake-categories';
+import { FakeDataService } from 'src/app/data/fake-data';
 
 const KEY = 'CATEGORIES';
 
 // 1000 va 3000 orasidagi qaysidur sonni qaytaradi
-const randomMilliseconds = (min = 1000, max = 3000) => {
+const randomMilliseconds = (min = 100, max = 2000) => {
   return min + Math.random() * (max - min);
 };
 

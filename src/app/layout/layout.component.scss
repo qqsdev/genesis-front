@@ -1,4 +1,4 @@
-.example-spacer {
+.flex-spacer {
   flex: 1 1 auto;
 }
 
@@ -8,11 +8,31 @@ main {
   gap: 20px;
 }
 
-.nav {
-  min-width: 200px;
+.page-container {
+  padding: 20px;
+  width: 100%;
 }
 
-.top_nav{
+.nav {
+  min-width: 200px;
+  // height: 100vh;
+  // border-right: 1px solid #666;
+  // box-shadow: 1px 0 5px 1px #666;
+}
+
+.top_nav {
   display: flex;
   gap: 20px;
+
+  a {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+  }
+
+  .active {
+    // color: #ddd;
+    // text-decoration: underline;
+    border: 1px solid #fff;
+  }
 }

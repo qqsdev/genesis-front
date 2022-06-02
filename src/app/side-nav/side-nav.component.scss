@@ -1,0 +1,17 @@
+.full-width {
+  width: 100%;
+}
+
+.mat-list-item {
+  cursor: pointer;
+
+  &.active {
+    background-color: #444;
+  }
+
+  &:active,
+  &:hover,
+  &:focus {
+    background-color: #444;
+  }
+}

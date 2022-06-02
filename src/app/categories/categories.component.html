@@ -1,26 +1,28 @@
-<div>
-  <a routerLink="/categories/add">Add New category</a>
+<div class="header-actions">
+  <button mat-stroked-button routerLink="/categories/add" type="button">
+    <mat-icon>add</mat-icon> Add new category
+  </button>
 </div>
 
-<ng-container *ngIf="!(isLoading$ | async); else loading">
-  <div class="categories">
-    <ng-container *ngFor="let category of categories$ | async">
-      <mat-card class="category-card">
-        <div class="image">
-          <img mat-card-image [src]="category.url" [alt]="category.name" />
-        </div>
-        <mat-card-content>
-          <h3>{{ category.name }}</h3>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button>EDIT</button>
-          <button mat-button color="warn" (click)="remove(category)">DELETE</button>
-        </mat-card-actions>
-      </mat-card>
-    </ng-container>
-  </div>
-</ng-container>
-
-<ng-template #loading>
-  <mat-spinner></mat-spinner>
-</ng-template>
+<genesis-lazy-content-page [listTemplate]="listTemplate" [loading]="isLoading$ | async" [list]="categories$ | async">
+  <ng-template let-categories="data" #listTemplate>
+    <div class="categories">
+      <ng-container *ngFor="let category of categories">
+        <mat-card class="categories__card">
+          <div class="categories__image">
+            <img mat-card-image [src]="category.url" [alt]="category.name" />
+          </div>
+          <mat-card-content>
+            <h3>
+              <a routerLink="/categories/details/{{ category.id }}">{{ category.name }}</a>
+            </h3>
+          </mat-card-content>
+          <mat-card-actions align="end">
+            <button mat-button routerLink="/categories/add/{{ category.id }}"><mat-icon>edit</mat-icon> EDIT</button>
+            <button mat-button color="warn" (click)="remove(category)"><mat-icon>delete</mat-icon> DELETE</button>
+          </mat-card-actions>
+        </mat-card>
+      </ng-container>
+    </div>
+  </ng-template>
+</genesis-lazy-content-page>

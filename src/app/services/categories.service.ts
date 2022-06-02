@@ -3,16 +3,10 @@ import { BehaviorSubject } from 'rxjs';
 import { Category } from '../models/category';
 import { ApiService } from './api-services/api.service';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable({ providedIn: 'root' })
 export class CategoriesService {
-  public isLoading$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
-    false
-  );
-  public categories$: BehaviorSubject<Category[]> = new BehaviorSubject<
-    Category[]
-  >([]);
+  public isLoading$ = new BehaviorSubject<boolean>(false);
+  public categories$ = new BehaviorSubject<Category[]>([]);
 
   constructor(private api: ApiService) {}
 

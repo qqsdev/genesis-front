@@ -1,12 +1,26 @@
-<div class="categories">
-  <ng-container *ngFor="let product of products">
-    <mat-card class="product-card">
-      <div class="image">
-        <img mat-card-image [src]="product.url" alt="Photo of a Shiba Inu" />
-      </div>
-      <mat-card-content>
-        <h3>{{ product.name }}</h3>
-      </mat-card-content>
-    </mat-card>
-  </ng-container>
+<div class="header-actions">
+  <button mat-stroked-button routerLink="/products/add"><mat-icon>add</mat-icon> Add new product</button>
 </div>
+
+<genesis-lazy-content-page [listTemplate]="listTemplate" [loading]="isLoading$ | async" [list]="products$ | async">
+  <ng-template let-products="data" #listTemplate>
+    <div class="products">
+      <ng-container *ngFor="let product of products">
+        <mat-card class="products__card">
+          <div class="products__image">
+            <img mat-card-image [src]="product.url" [alt]="product.name" />
+          </div>
+
+          <mat-card-title>
+            <h3>{{ product.name }}</h3>
+          </mat-card-title>
+
+          <mat-card-actions align="end">
+            <button mat-button><mat-icon>edit</mat-icon> EDIT</button>
+            <button mat-button color="warn" (click)="remove(product)"><mat-icon>delete</mat-icon> DELETE</button>
+          </mat-card-actions>
+        </mat-card>
+      </ng-container>
+    </div>
+  </ng-template>
+</genesis-lazy-content-page>

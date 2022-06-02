@@ -1,5 +1,15 @@
 <mat-list role="list">
+  <ng-container *ngIf="(loading$ | async) && !(categories$ | async)?.length">
+    <mat-list-item><span class="placeholder placeholder-wave placeholder-lg full-width"></span></mat-list-item>
+    <mat-list-item><span class="placeholder placeholder-wave placeholder-lg full-width"></span></mat-list-item>
+    <mat-list-item><span class="placeholder placeholder-wave placeholder-lg full-width"></span></mat-list-item>
+    <mat-list-item><span class="placeholder placeholder-wave placeholder-lg full-width"></span></mat-list-item>
+    <mat-list-item><span class="placeholder placeholder-wave placeholder-lg full-width"></span></mat-list-item>
+  </ng-container>
+
   <ng-container *ngFor="let category of categories$ | async">
-    <mat-list-item role="listitem">{{ category.name }}</mat-list-item>
+    <mat-list-item role="navigation" routerLink="/categories/details/{{ category.id }}" routerLinkActive="active">
+      {{ category.name }}
+    </mat-list-item>
   </ng-container>
 </mat-list>

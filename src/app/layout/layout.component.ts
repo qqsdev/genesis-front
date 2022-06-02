@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadingService } from '../services/loading.service';
 
 @Component({
   templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.scss']
+  styleUrls: ['./layout.component.scss'],
 })
-export class LayoutComponent implements OnInit {
+export class LayoutComponent {
+  constructor(public loading: LoadingService) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  public clearLocalStorage() {
+    localStorage.clear();
+    location.reload();
   }
-
 }
