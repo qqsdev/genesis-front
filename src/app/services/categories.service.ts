@@ -7,29 +7,29 @@ import { ApiService } from './api-services/api.service';
   providedIn: 'root',
 })
 export class CategoriesService {
-  public isLoading: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
+  public isLoading$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
     false
   );
-  public categories: BehaviorSubject<Category[]> = new BehaviorSubject<
+  public categories$: BehaviorSubject<Category[]> = new BehaviorSubject<
     Category[]
   >([]);
 
   constructor(private api: ApiService) {}
 
   public fetch() {
-    this.isLoading.next(true);
+    this.isLoading$.next(true);
     this.api.categories.getAll().subscribe((data) => {
-      this.categories.next(data);
-      this.isLoading.next(false);
+      this.categories$.next(data);
+      this.isLoading$.next(false);
     });
   }
 
   public remove(category: Category) {
     if (confirm('Are you sure?')) {
-      this.isLoading.next(true);
+      this.isLoading$.next(true);
       this.api.categories.remove(category.id).subscribe((data) => {
-        this.categories.next(data);
-        this.isLoading.next(false);
+        this.categories$.next(data);
+        this.isLoading$.next(false);
       });
     }
   }

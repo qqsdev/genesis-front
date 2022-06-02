@@ -1,5 +1,5 @@
 <mat-list role="list">
-  <ng-container *ngFor="let category of categories | async">
+  <ng-container *ngFor="let category of categories$ | async">
     <mat-list-item role="listitem">{{ category.name }}</mat-list-item>
   </ng-container>
 </mat-list>

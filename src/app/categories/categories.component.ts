@@ -9,8 +9,8 @@ import { CategoriesService } from '../services/categories.service';
   styleUrls: ['./categories.component.scss'],
 })
 export class CategoriesComponent implements OnInit {
-  public isLoading: BehaviorSubject<boolean> = this.service.isLoading;
-  public categories: BehaviorSubject<Category[]> = this.service.categories;
+  public isLoading$: BehaviorSubject<boolean> = this.service.isLoading$;
+  public categories$: BehaviorSubject<Category[]> = this.service.categories$;
 
   constructor(private service: CategoriesService) {}
 
