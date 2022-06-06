@@ -2,12 +2,19 @@
   <button mat-icon-button class="menu-icon" aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>
+  
   <div class="top_nav">
     <span>Genesis</span>
     <span><a routerLink="/categories" routerLinkActive="active">Categories</a></span>
     <span><a routerLink="/products" routerLinkActive="active">All Products</a></span>
   </div>
+
   <span class="flex-spacer"></span>
+
+  <genesis-full-search></genesis-full-search>
+
+  <span class="flex-spacer"></span>
+
   <button mat-button class="profile-icon" (click)="clearLocalStorage()">
     <mat-icon>storage</mat-icon> Restart local storage
   </button>

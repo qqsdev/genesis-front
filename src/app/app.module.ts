@@ -21,6 +21,7 @@ import { ProductsComponent } from './products/products.component';
 import { CategoryDetailsComponent } from './categories/category-details/category-details.component';
 import { CategoryFormComponent } from './categories/category-form/category-form.component';
 import { LazyContentPageComponent } from './components/lazy-content-page/lazy-content-page.component';
+import { FullSearchComponent } from './full-search/full-search.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { LazyContentPageComponent } from './components/lazy-content-page/lazy-co
     CategoryDetailsComponent,
     CategoryFormComponent,
     LazyContentPageComponent,
+    FullSearchComponent,
   ],
   imports: [
     BrowserModule,
