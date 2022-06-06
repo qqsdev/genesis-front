@@ -26,13 +26,25 @@ export class CategoryFormComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       this.id = params.get('id');
+      if (this.id) {
+        this.service.get(+this.id).subscribe((data) => {
+          console.log(data);
+          this.form.patchValue(data);
+        });
+      }
     });
   }
 
-  public save() {
+  public save(event: Event) {
+    event.preventDefault();
+
     if (this.form.valid) {
-      this.service.save(this.form.value);
+      this.id
+        ? this.service.update(this.form.value)
+        : this.service.create(this.form.value);
       this.router.navigate(['/']);
     }
+
+    return false;
   }
 }

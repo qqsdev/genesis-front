@@ -24,7 +24,7 @@ export class CategoriesApiService {
    * @returns category from storage
    */
   public get(id: number): Observable<Category> {
-    return this.http.get<Category>(BASE_URL, { params: { id } });
+    return this.http.get<Category>(`${BASE_URL}/${id}`);
   }
 
   /**
@@ -32,8 +32,9 @@ export class CategoriesApiService {
    * @param payload
    * @returns updated list
    */
-  public create(payload: any): Observable<Category[]> {
-    return this.http.post<Category[]>(BASE_URL, payload);
+  public create(payload: Partial<Category>): Observable<Category[]> {
+    const { id, ...body } = payload;
+    return this.http.post<Category[]>(BASE_URL, body);
   }
 
   /**
@@ -42,7 +43,7 @@ export class CategoriesApiService {
    * @param changedCategory
    * @returns updated category or null
    */
-  public update(id: number, payload: Category): Observable<Category[]> {
+  public update(payload: Category): Observable<Category[]> {
     return this.http.put<Category[]>(BASE_URL, payload);
   }
 

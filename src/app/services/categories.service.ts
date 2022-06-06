@@ -18,6 +18,26 @@ export class CategoriesService {
     });
   }
 
+  public get(id: number) {
+    return this.api.categories.get(id);
+  }
+
+  public create(category: Category) {
+    this.isLoading$.next(true);
+    return this.api.categories.create(category).subscribe((data) => {
+      this.categories$.next(data);
+      this.isLoading$.next(false);
+    });
+  }
+
+  public update(category: Category) {
+    this.isLoading$.next(true);
+    return this.api.categories.update(category).subscribe((data) => {
+      this.categories$.next(data);
+      this.isLoading$.next(false);
+    });
+  }
+
   public remove(category: Category) {
     if (confirm('Are you sure?')) {
       this.isLoading$.next(true);
@@ -26,11 +46,5 @@ export class CategoriesService {
         this.isLoading$.next(false);
       });
     }
-  }
-
-  public save(category: Category) {
-    return this.api.categories.create(category).subscribe(() => {
-      this.fetch();
-    });
   }
 }
