@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Product } from '../models/product';
-import { ApiService } from './api-services/api.service';
+import { ApiService } from './fake-api-services/api.service';
 import { LoadingService } from './loading.service';
 
 @Injectable({

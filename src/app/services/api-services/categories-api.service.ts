@@ -1,33 +1,21 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { delay } from 'rxjs/operators';
-import { FAKE_CATEGORIES } from 'src/app/data/fake-categories';
-import { FakeDataService } from 'src/app/data/fake-data';
+import { Observable } from 'rxjs';
+import { Category } from 'src/app/models/category';
+import { environment } from 'src/environments/environment';
 
-const KEY = 'CATEGORIES';
+const BASE_URL = environment.api + '/categories';
 
-// 1000 va 3000 orasidagi qaysidur sonni qaytaradi
-const randomMilliseconds = (min = 100, max = 2000) => {
-  return min + Math.random() * (max - min);
-};
-
-const rerurnWithDelay = (data: any) =>
-  of(data).pipe(delay(randomMilliseconds()));
-
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable({ providedIn: 'root' })
 export class CategoriesApiService {
-  constructor(private fakeDataService: FakeDataService) {}
+  constructor(private http: HttpClient) {}
 
   /**
    * Fetches all categories from storage
    * @returns categories from storage
    */
-  public getAll() {
-    const categories = this.fakeDataService.getList(KEY, FAKE_CATEGORIES);
-
-    return rerurnWithDelay(categories);
+  public getAll(): Observable<Category[]> {
+    return this.http.get<Category[]>(BASE_URL);
   }
 
   /**
@@ -35,27 +23,17 @@ export class CategoriesApiService {
    * @param id identificator of category
    * @returns category from storage
    */
-  public get(id: number) {
-    const categories = this.fakeDataService.getList(KEY, FAKE_CATEGORIES);
-
-    const category = categories.find((c: any) => c.id === id);
-
-    return rerurnWithDelay(category);
+  public get(id: number): Observable<Category> {
+    return this.http.get<Category>(BASE_URL, { params: { id } });
   }
 
   /**
    * Saving new category into storage
-   * @param newCategory
+   * @param payload
    * @returns updated list
    */
-  public create(newCategory: any) {
-    const categories = this.fakeDataService.getList(KEY, FAKE_CATEGORIES);
-
-    categories.push(newCategory);
-
-    this.fakeDataService.saveList(KEY, categories);
-
-    return rerurnWithDelay(categories);
+  public create(payload: any): Observable<Category[]> {
+    return this.http.post<Category[]>(BASE_URL, payload);
   }
 
   /**
@@ -64,24 +42,8 @@ export class CategoriesApiService {
    * @param changedCategory
    * @returns updated category or null
    */
-  public update(id: number, changedCategory: any) {
-    const categories = this.fakeDataService.getList(KEY, FAKE_CATEGORIES);
-
-    const oldCategory = categories.find((c: any) => c.id === id);
-
-    if (oldCategory) {
-      const index = categories.findIndex((c) => c === oldCategory);
-
-      const updatedCategory = { ...oldCategory, ...changedCategory };
-
-      categories[index] = updatedCategory;
-
-      this.fakeDataService.saveList(KEY, categories);
-
-      return rerurnWithDelay(updatedCategory);
-    }
-
-    return rerurnWithDelay(null);
+  public update(id: number, payload: Category): Observable<Category[]> {
+    return this.http.put<Category[]>(BASE_URL, payload);
   }
 
   /**
@@ -89,19 +51,7 @@ export class CategoriesApiService {
    * @param id identificator of category
    * @returns updated list or old list
    */
-  public remove(id: number): Observable<any[]> {
-    const categories = this.fakeDataService.getList(KEY, FAKE_CATEGORIES);
-
-    const category = categories.find((c: any) => c.id === id);
-
-    if (category) {
-      const updatetCategories = categories.filter((c) => c !== category);
-
-      this.fakeDataService.saveList(KEY, updatetCategories);
-
-      return rerurnWithDelay(updatetCategories);
-    }
-
-    return rerurnWithDelay(categories);
+  public remove(id: number): Observable<Category[]> {
+    return this.http.delete<Category[]>(BASE_URL, { params: { id } });
   }
 }

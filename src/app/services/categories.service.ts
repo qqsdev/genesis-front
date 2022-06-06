@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Category } from '../models/category';
-import { ApiService } from './api-services/api.service';
+import { ApiService } from './fake-api-services/api.service';
 
 @Injectable({ providedIn: 'root' })
 export class CategoriesService {
