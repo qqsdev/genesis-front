@@ -1,0 +1,6 @@
+models ichiga model yasimiz
+data ichiga ma'lumotla
+service
+component
+component ichida ngFor bilan chiqaramiz
+layout ichiga componentni chiqaramiz

@@ -18,6 +18,7 @@ import { SideNavComponent } from './side-nav/side-nav.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { ProductsComponent } from './products/products.component';
 import { AddformComponent } from './categories/addform/addform.component';
+import { CarListComponent } from './practice/car-list/car-list.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AddformComponent } from './categories/addform/addform.component';
     CategoriesComponent,
     ProductsComponent,
     AddformComponent,
+    CarListComponent,
   ],
   imports: [
     BrowserModule,
