@@ -4,3 +4,5 @@ service
 component
 component ichida ngFor bilan chiqaramiz
 layout ichiga componentni chiqaramiz
+
+routing qo'shamiz

@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddformComponent } from './categories/addform/addform.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { LayoutComponent } from './layout/layout.component';
+import { CarListComponent } from './practice/car-list/car-list.component';
 import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
@@ -11,13 +12,20 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       {
-        path: '',
+        path: 'categories',
         component: CategoriesComponent,
       },
-      { path: 'categories/add:id', component: AddformComponent },
+      {
+        path: 'categories/add:id',
+        component: AddformComponent,
+      },
       {
         path: 'products',
         component: ProductsComponent,
+      },
+      {
+        path: 'cars',
+        component: CarListComponent,
       },
     ],
   },
