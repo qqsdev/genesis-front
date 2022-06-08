@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Product } from '../models/product';
-import { ApiService } from './fake-api-services/api.service';
+import { ApiService } from './api-services/api.service';
 import { LoadingService } from './loading.service';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable({ providedIn: 'root' })
 export class ProductsService {
   public isLoading$ = new BehaviorSubject<boolean>(false);
   public products$ = new BehaviorSubject<Product[]>([]);
@@ -44,6 +42,22 @@ export class ProductsService {
   public save(product: Product) {
     return this.api.products.create(product).subscribe(() => {
       this.fetch();
+    });
+  }
+
+  public create(product: Product) {
+    this.isLoading$.next(true);
+    return this.api.products.create(product).subscribe((data) => {
+      this.products$.next(data);
+      this.isLoading$.next(false);
+    });
+  }
+
+  public update(product: Product) {
+    this.isLoading$.next(true);
+    return this.api.products.update(product).subscribe((data) => {
+      this.products$.next(data);
+      this.isLoading$.next(false);
     });
   }
 }

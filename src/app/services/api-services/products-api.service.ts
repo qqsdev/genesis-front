@@ -1,33 +1,23 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { of, Observable } from 'rxjs';
-import { delay } from 'rxjs/operators';
-import { FakeDataService } from 'src/app/data/fake-data';
-import { FAKE_PRODUCTS } from 'src/app/data/fake-products';
+import { Observable } from 'rxjs';
+import { Product } from 'src/app/models/product';
+import { environment } from 'src/environments/environment';
 
-const KEY = 'PRODUCTS';
-
-// 1000 va 3000 orasidagi qaysidur sonni qaytaradi
-const randomMilliseconds = (min = 100, max = 2000) => {
-  return min + Math.random() * (max - min);
-};
-
-const rerurnWithDelay = (data: any) =>
-  of(data).pipe(delay(randomMilliseconds()));
+const BASE_URL = environment.api + '/products';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductsApiService {
-  constructor(private fakeDataService: FakeDataService) {}
+  constructor(private http: HttpClient) {}
 
   /**
    * Fetches all products from storage
    * @returns products from storage
    */
-  public getAll() {
-    const products = this.fakeDataService.getList(KEY, FAKE_PRODUCTS);
-
-    return rerurnWithDelay(products);
+  public getAll(): Observable<Product[]> {
+    return this.http.get<Product[]>(BASE_URL);
   }
 
   /**
@@ -35,26 +25,18 @@ export class ProductsApiService {
    * @param id identificator of product
    * @returns product from storage
    */
-  public get(id: number) {
-    const products = this.fakeDataService.getList(KEY, FAKE_PRODUCTS);
-    const product = products.find((c: any) => c.id === id);
-
-    return rerurnWithDelay(product);
+  public get(id: number): Observable<Product> {
+    return this.http.get<Product>(`${BASE_URL}/${id}`);
   }
 
   /**
    * Saving new product into storage
-   * @param newProduct
+   * @param payload
    * @returns updated list
    */
-  public create(newProduct: any) {
-    const products = this.fakeDataService.getList(KEY, FAKE_PRODUCTS);
-
-    products.push(newProduct);
-
-    this.fakeDataService.saveList(KEY, products);
-
-    return rerurnWithDelay(products);
+  public create(payload: Partial<Product>): Observable<Product[]> {
+    const { id, ...body } = payload;
+    return this.http.post<Product[]>(BASE_URL, body);
   }
 
   /**
@@ -63,22 +45,8 @@ export class ProductsApiService {
    * @param changedProduct
    * @returns updated product or null
    */
-  public update(id: number, changedProduct: any) {
-    const products = this.fakeDataService.getList(KEY, FAKE_PRODUCTS);
-    const oldProduct = products.find((c: any) => c.id === id);
-
-    if (oldProduct) {
-      const index = products.findIndex((c) => c === oldProduct);
-      const updatedProduct = { ...oldProduct, ...changedProduct };
-
-      products[index] = updatedProduct;
-
-      this.fakeDataService.saveList(KEY, products);
-
-      return rerurnWithDelay(updatedProduct);
-    }
-
-    return rerurnWithDelay(null);
+  public update(payload: Partial<Product>): Observable<Product[]> {
+    return this.http.put<Product[]>(BASE_URL, payload);
   }
 
   /**
@@ -86,18 +54,7 @@ export class ProductsApiService {
    * @param id identificator of product
    * @returns updated list or old list
    */
-  public remove(id: number): Observable<any[]> {
-    const products = this.fakeDataService.getList(KEY, FAKE_PRODUCTS);
-    const product = products.find((c: any) => c.id === id);
-
-    if (product) {
-      const updatetProducts = products.filter((c) => c !== product);
-
-      this.fakeDataService.saveList(KEY, updatetProducts);
-
-      return rerurnWithDelay(updatetProducts);
-    }
-
-    return rerurnWithDelay(products);
+  public remove(id: number): Observable<Product[]> {
+    return this.http.delete<Product[]>(BASE_URL, { params: { id } });
   }
 }
