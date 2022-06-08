@@ -47,7 +47,7 @@ export class ProductFormComponent implements OnInit {
       this.id
         ? this.service.update(this.form.value)
         : this.service.create(this.form.value);
-      this.router.navigate(['/']);
+      this.router.navigate(['/products']);
     }
 
     return false;
