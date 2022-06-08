@@ -19,6 +19,10 @@ export class ProductsService {
     });
   }
 
+  public get(id: number) {
+    return this.api.products.get(id);
+  }
+
   public fetchByCategory(categoryId: number) {
     this.loading.content$.next(true);
     this.api.products.getAll().subscribe((data) => {

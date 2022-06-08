@@ -9,6 +9,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { HttpClientModule } from '@angular/common/http';
@@ -23,6 +24,7 @@ import { CategoryDetailsComponent } from './categories/category-details/category
 import { CategoryFormComponent } from './categories/category-form/category-form.component';
 import { LazyContentPageComponent } from './components/lazy-content-page/lazy-content-page.component';
 import { FullSearchComponent } from './full-search/full-search.component';
+import { ProductFormComponent } from './products/product-form/product-form.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,7 @@ import { FullSearchComponent } from './full-search/full-search.component';
     CategoryFormComponent,
     LazyContentPageComponent,
     FullSearchComponent,
+    ProductFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,6 +54,7 @@ import { FullSearchComponent } from './full-search/full-search.component';
     ReactiveFormsModule,
     MatInputModule,
     MatProgressBarModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

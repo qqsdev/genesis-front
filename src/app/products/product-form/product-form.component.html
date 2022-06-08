@@ -1,0 +1,38 @@
+<h2>{{ !id ? 'Add new product' : 'Edit product' }}</h2>
+
+<form [formGroup]="form" (submit)="save($event)">
+  <div class="cdk-visually-hidden">
+    <mat-form-field appearance="outline">
+      <mat-label>Id</mat-label>
+      <input formControlName="id" matInput readonly placeholder="Id" />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Category</mat-label>
+      <mat-select formControlName="categoryId">
+        <mat-option *ngFor="let item of categories$ | async" [value]="item.id">{{ item.name }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input formControlName="name" matInput type="text" placeholder="Name" />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field appearance="outline">
+      <mat-label>Image URL</mat-label>
+      <input formControlName="imageUrl" matInput type="text" placeholder="Image URL" />
+    </mat-form-field>
+  </div>
+
+  <div class="actions">
+    <button mat-raised-button type="button" routerLink="/categories"><mat-icon>cancel</mat-icon> Cancel</button>
+    <button mat-raised-button type="submit" color="primary"><mat-icon>save</mat-icon> Save</button>
+  </div>
+</form>

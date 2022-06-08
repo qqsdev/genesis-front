@@ -4,6 +4,7 @@ import { CategoriesComponent } from './categories/categories.component';
 import { CategoryDetailsComponent } from './categories/category-details/category-details.component';
 import { CategoryFormComponent } from './categories/category-form/category-form.component';
 import { LayoutComponent } from './layout/layout.component';
+import { ProductFormComponent } from './products/product-form/product-form.component';
 import { ProductsComponent } from './products/products.component';
 
 const routes: Routes = [
@@ -12,6 +13,8 @@ const routes: Routes = [
     component: LayoutComponent,
     children: [
       { path: 'products', component: ProductsComponent },
+      { path: 'products/add', component: ProductFormComponent },
+      { path: 'products/add/:id', component: ProductFormComponent },
 
       { path: 'categories', component: CategoriesComponent },
       { path: 'categories/add', component: CategoryFormComponent },
