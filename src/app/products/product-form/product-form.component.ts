@@ -15,7 +15,7 @@ export class ProductFormComponent implements OnInit {
   public form: FormGroup = new FormGroup({
     id: new FormControl(),
     name: new FormControl('', Validators.required),
-    iamgeUrl: new FormControl(),
+    imageUrl: new FormControl(),
     categoryId: new FormControl(),
   });
 
