@@ -15,19 +15,21 @@ export class CategoriesService {
   constructor(private api: ApiService, private loading: LoadingService) {}
 
   public fetch() {
-    this.loading.isLoading$.next(true);
+    this.loading.startLoading();
+
     this.api.categories.getAll().subscribe((data) => {
       this.categories$.next(data);
-      this.loading.isLoading$.next(false);
+      this.loading.stopLoading();
     });
   }
 
   public remove(category: Category) {
     if (confirm('Are you sure?')) {
-      this.loading.isLoading$.next(true);
+      this.loading.startLoading();
+
       this.api.categories.remove(category.id).subscribe((data) => {
         this.categories$.next(data);
-        this.loading.isLoading$.next(false);
+        this.loading.stopLoading();
       });
     }
   }
@@ -37,17 +39,16 @@ export class CategoriesService {
       this.fetch();
     });
   }
+  
   public update(id: number, category: Category) {
     return this.api.categories.update(id, category);
   }
 
   public get(id: number) {
-    this.loading.isLoading$.next(true);
+    this.loading.startLoading();
 
-    return this.api.categories.get(id).pipe(
-      tap(() => {
-        this.loading.isLoading$.next(false);
-      })
-    );
+    return this.api.categories
+      .get(id)
+      .pipe(tap(() => this.loading.stopLoading()));
   }
 }
