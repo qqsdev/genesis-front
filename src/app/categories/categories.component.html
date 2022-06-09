@@ -1,5 +1,5 @@
-<div>
-  <a routerLink="/categories/add">Add New category</a>
+<div class="page_header">
+  <button mat-raised-button color="primary" routerLink="/categories/add">Add New category</button>
 </div>
 
 <ng-container *ngIf="!(isLoading$ | async); else loading">

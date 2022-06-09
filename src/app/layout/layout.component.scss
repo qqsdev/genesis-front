@@ -12,7 +12,11 @@ main {
   min-width: 200px;
 }
 
-.top_nav{
+.top_nav {
   display: flex;
   gap: 20px;
+}
+
+.page_content {
+  padding: 20px;
 }
