@@ -1,5 +1,5 @@
 <div class="categories">
-  <ng-container *ngFor="let product of products">
+  <ng-container *ngFor="let product of products | async">
     <mat-card class="product-card">
       <div class="image">
         <img mat-card-image [src]="product.url" alt="Photo of a Shiba Inu" />
