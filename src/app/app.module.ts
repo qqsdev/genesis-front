@@ -23,6 +23,7 @@ import { CarListComponent } from './practice/car-list/car-list.component';
 import { EmployeeListComponent } from './practice/employee-list/employee-list.component';
 import { PcListComponent } from './practice/pc-list/pc-list.component';
 import { AnimalListComponent } from './practice/animal-list/animal-list.component';
+import { BallListComponent } from './practice/ball-list/ball-list.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { AnimalListComponent } from './practice/animal-list/animal-list.componen
     EmployeeListComponent,
     PcListComponent,
     AnimalListComponent,
+    BallListComponent,
   ],
   imports: [
     BrowserModule,

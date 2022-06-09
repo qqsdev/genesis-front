@@ -8,6 +8,7 @@ import { CarListComponent } from './practice/car-list/car-list.component';
 import { EmployeeListComponent } from './practice/employee-list/employee-list.component';
 import { ProductsComponent } from './products/products.component';
 import { AnimalListComponent } from './practice/animal-list/animal-list.component';
+import { BallListComponent } from './practice/ball-list/ball-list.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,7 @@ const routes: Routes = [
       { path: 'pcs', component: PcListComponent },
       { path: 'employees', component: EmployeeListComponent },
       { path: 'animals', component: AnimalListComponent },
+      { path: 'balls', component: BallListComponent },
     ],
   },
 ];
