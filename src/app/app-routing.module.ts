@@ -13,30 +13,18 @@ const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
-      {
-        path: 'categories',
-        component: CategoriesComponent,
-      },
-      {
-        path: 'categories/add:id',
-        component: AddformComponent,
-      },
-      {
-        path: 'products',
-        component: ProductsComponent,
-      },
-      {
-        path: 'cars',
-        component: CarListComponent,
-      },
-      {
-        path: 'pcs',
-        component: PcListComponent,
-      },
-      {
-        path: 'employees',
-        component: EmployeeListComponent,
-      },
+      // Categories
+      { path: 'categories', component: CategoriesComponent },
+      { path: 'categories/add', component: AddformComponent },
+      { path: 'categories/edit/:id', component: AddformComponent },
+
+      // Products
+      { path: 'products', component: ProductsComponent },
+      
+      // Practice
+      { path: 'cars', component: CarListComponent },
+      { path: 'pcs', component: PcListComponent },
+      { path: 'employees', component: EmployeeListComponent },
     ],
   },
 ];
