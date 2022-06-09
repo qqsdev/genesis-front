@@ -7,6 +7,7 @@ import { PcListComponent } from './practice/pc-list/pc-list.component';
 import { CarListComponent } from './practice/car-list/car-list.component';
 import { EmployeeListComponent } from './practice/employee-list/employee-list.component';
 import { ProductsComponent } from './products/products.component';
+import { AnimalListComponent } from './practice/animal-list/animal-list.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const routes: Routes = [
       { path: 'cars', component: CarListComponent },
       { path: 'pcs', component: PcListComponent },
       { path: 'employees', component: EmployeeListComponent },
+      { path: 'animals', component: AnimalListComponent },
     ],
   },
 ];

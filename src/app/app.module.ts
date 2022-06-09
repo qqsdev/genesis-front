@@ -22,6 +22,7 @@ import { AddformComponent } from './categories/addform/addform.component';
 import { CarListComponent } from './practice/car-list/car-list.component';
 import { EmployeeListComponent } from './practice/employee-list/employee-list.component';
 import { PcListComponent } from './practice/pc-list/pc-list.component';
+import { AnimalListComponent } from './practice/animal-list/animal-list.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { PcListComponent } from './practice/pc-list/pc-list.component';
     CarListComponent,
     EmployeeListComponent,
     PcListComponent,
+    AnimalListComponent,
   ],
   imports: [
     BrowserModule,
