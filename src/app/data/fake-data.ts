@@ -53,31 +53,37 @@ export const FAKE_PRODUCTS = [
     id: 1,
     categoryId: 5,
     name: 'SAMSUNG Galaxy S22',
-    url: 'assets/images/electronics.jpg',
+    url: 'assets/images/electronics.jpeg',
   },
   {
     id: 2,
     categoryId: 5,
     name: 'SAMSUNG Galaxy S21 5G',
-    url: 'assets/images/electronics.jpg',
+    url: 'assets/images/electronics.jpeg',
   },
   {
     id: 3,
     categoryId: 5,
     name: 'SAMSUNG Galaxy A13 5G',
-    url: 'assets/images/electronics.jpg',
+    url: 'assets/images/electronics.jpeg',
   },
   {
     id: 4,
     categoryId: 5,
     name: 'OnePlus 10 Pro',
-    url: 'assets/images/electronics.jpg',
+    url: 'assets/images/electronics.jpeg',
   },
   {
     id: 5,
     categoryId: 5,
     name: 'OnePlus Nord N200',
-    url: 'assets/images/electronics.jpg',
+    url: 'assets/images/electronics.jpeg',
+  },
+  {
+    id: 6,
+    categoryId: 5,
+    name: 'Poco f3',
+    url: 'assets/images/electronics.jpeg',
   },
 ];
 
