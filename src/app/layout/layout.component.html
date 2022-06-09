@@ -8,13 +8,10 @@
     <span><a routerLink="/categories">Categories</a></span>
   </div>
   <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
+  <button mat-icon-button aria-label="Login">
+    <mat-icon>account_circle</mat-icon>
   </button>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-    <mat-icon>share</mat-icon>
-  </button>
-</mat-toolbar>
+ </mat-toolbar>
 
 <mat-progress-bar *ngIf="isLoading$ | async" mode="query" color="accent"></mat-progress-bar>
 
