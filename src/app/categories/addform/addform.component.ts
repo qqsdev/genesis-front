@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CategoriesService } from 'src/app/services/categories.service';
 
 @Component({
@@ -15,13 +15,32 @@ export class AddformComponent implements OnInit {
     url: new FormControl(),
   });
 
-  constructor(private service: CategoriesService, private router: Router) {}
+  public id: string | null = '';
 
-  ngOnInit(): void {}
+  constructor(
+    private service: CategoriesService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
+
+  ngOnInit(): void {
+    this.route.paramMap.subscribe((params) => {
+      this.id = params.get('id');
+      if (this.id) {
+        this.service.get(+this.id).subscribe((data) => {
+          this.form.patchValue(data);
+        });
+      }
+    });
+  }
 
   public save() {
     if (this.form.valid) {
-      this.service.save(this.form.value);
+      if (this.id) {
+        this.service.update(+this.id, this.form.value);
+      } else {
+        this.service.save(this.form.value);
+      }
       this.router.navigate(['/']);
     }
   }

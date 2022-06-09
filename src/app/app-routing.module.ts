@@ -14,7 +14,10 @@ const routes: Routes = [
         path: '',
         component: CategoriesComponent,
       },
-      { path: 'categories/add:id', component: AddformComponent },
+      {
+        path: 'categories/add/:id',
+        component: AddformComponent,
+      },
       {
         path: 'products',
         component: ProductsComponent,

@@ -39,4 +39,11 @@ export class CategoriesService {
       this.fetch();
     });
   }
+  public update(id: number, category: Category) {
+    return this.api.categories.update(id, category);
+  }
+
+  public get(id: number) {
+    return this.api.categories.get(id);
+  }
 }
