@@ -10,6 +10,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -47,6 +48,7 @@ import { PcListComponent } from './practice/pc-list/pc-list.component';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatProgressBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

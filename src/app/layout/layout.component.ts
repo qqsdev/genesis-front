@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { LoadingService } from '../services/loading.service';
 
 @Component({
   templateUrl: './layout.component.html',
-  styleUrls: ['./layout.component.scss']
+  styleUrls: ['./layout.component.scss'],
 })
 export class LayoutComponent implements OnInit {
+  public isLoading$ = this.loading.isLoading$;
 
-  constructor() { }
+  constructor(private loading: LoadingService) {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

@@ -16,6 +16,8 @@
   </button>
 </mat-toolbar>
 
+<mat-progress-bar *ngIf="isLoading$ | async" mode="query" color="accent"></mat-progress-bar>
+
 <main>
   <app-side-nav class="nav"> </app-side-nav>
   <router-outlet> </router-outlet>

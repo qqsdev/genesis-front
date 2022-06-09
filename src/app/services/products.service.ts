@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { LoadingService } from './loading.service';
 
 @Injectable({
   providedIn: 'root',
@@ -11,5 +12,5 @@ export class ProductsService {
     },
   ];
 
-  constructor() {}
+  constructor(private loading: LoadingService) {}
 }

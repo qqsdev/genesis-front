@@ -1,35 +1,33 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { tap } from 'rxjs/operators';
 import { Category } from '../models/category';
 import { ApiService } from './api-services/api.service';
+import { LoadingService } from './loading.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CategoriesService {
-  public isLoading$: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(
-    false
-  );
-  public categories$: BehaviorSubject<Category[]> = new BehaviorSubject<
-    Category[]
-  >([]);
+  public isLoading$ = new BehaviorSubject<boolean>(false);
+  public categories$ = new BehaviorSubject<Category[]>([]);
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService, private loading: LoadingService) {}
 
   public fetch() {
-    this.isLoading$.next(true);
+    this.loading.isLoading$.next(true);
     this.api.categories.getAll().subscribe((data) => {
       this.categories$.next(data);
-      this.isLoading$.next(false);
+      this.loading.isLoading$.next(false);
     });
   }
 
   public remove(category: Category) {
     if (confirm('Are you sure?')) {
-      this.isLoading$.next(true);
+      this.loading.isLoading$.next(true);
       this.api.categories.remove(category.id).subscribe((data) => {
         this.categories$.next(data);
-        this.isLoading$.next(false);
+        this.loading.isLoading$.next(false);
       });
     }
   }
@@ -44,6 +42,12 @@ export class CategoriesService {
   }
 
   public get(id: number) {
-    return this.api.categories.get(id);
+    this.loading.isLoading$.next(true);
+
+    return this.api.categories.get(id).pipe(
+      tap(() => {
+        this.loading.isLoading$.next(false);
+      })
+    );
   }
 }
