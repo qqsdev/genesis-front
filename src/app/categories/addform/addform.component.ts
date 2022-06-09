@@ -41,7 +41,7 @@ export class AddformComponent implements OnInit {
       } else {
         this.service.save(this.form.value);
       }
-      this.router.navigate(['/']);
+      this.router.navigate(['/categories']);
     }
   }
 }

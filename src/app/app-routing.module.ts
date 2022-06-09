@@ -20,7 +20,7 @@ const routes: Routes = [
 
       // Products
       { path: 'products', component: ProductsComponent },
-      
+
       // Practice
       { path: 'cars', component: CarListComponent },
       { path: 'pcs', component: PcListComponent },
