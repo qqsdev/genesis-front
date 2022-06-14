@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AddformComponent } from './categories/addform/addform.component';
-import { CategoriesComponent } from './categories/categories.component';
-import { LayoutComponent } from './layout/layout.component';
+import { AddformComponent } from './features/categories/addform/addform.component';
+import { CategoriesComponent } from './features/categories/categories.component';
+import { LayoutComponent } from './shared/layout/layout.component';
 import { PcListComponent } from './practice/pc-list/pc-list.component';
 import { CarListComponent } from './practice/car-list/car-list.component';
 import { EmployeeListComponent } from './practice/employee-list/employee-list.component';
-import { ProductsComponent } from './products/products.component';
+import { ProductsComponent } from './features/products/products.component';
 import { AnimalListComponent } from './practice/animal-list/animal-list.component';
 import { BallListComponent } from './practice/ball-list/ball-list.component';
 

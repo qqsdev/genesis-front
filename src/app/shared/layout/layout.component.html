@@ -8,6 +8,7 @@
     <span><a routerLink="/categories">Categories</a></span>
   </div>
   <span class="example-spacer"></span>
+  
   <button mat-icon-button aria-label="Login">
     <mat-icon>account_circle</mat-icon>
   </button>
@@ -16,7 +17,7 @@
 <mat-progress-bar *ngIf="isLoading$ | async" mode="query" color="accent"></mat-progress-bar>
 
 <main>
-  <app-side-nav class="nav"> </app-side-nav>
+  <app-side-nav class="nav"></app-side-nav>
   <div class="page_content">
     <router-outlet> </router-outlet>
   </div>

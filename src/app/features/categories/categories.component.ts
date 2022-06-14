@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Category } from '../models/category';
-import { CategoriesService } from '../services/categories.service';
+import { Category } from '../../models/category';
+import { CategoriesService } from '../../services/categories.service';
 
 @Component({
   selector: 'app-categories',

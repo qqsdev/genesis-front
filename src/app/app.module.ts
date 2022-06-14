@@ -14,11 +14,11 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LayoutComponent } from './layout/layout.component';
-import { SideNavComponent } from './side-nav/side-nav.component';
-import { CategoriesComponent } from './categories/categories.component';
-import { ProductsComponent } from './products/products.component';
-import { AddformComponent } from './categories/addform/addform.component';
+import { LayoutComponent } from './shared/layout/layout.component';
+import { SideNavComponent } from './shared/side-nav/side-nav.component';
+import { CategoriesComponent } from './features/categories/categories.component';
+import { ProductsComponent } from './features/products/products.component';
+import { AddformComponent } from './features/categories/addform/addform.component';
 import { CarListComponent } from './practice/car-list/car-list.component';
 import { EmployeeListComponent } from './practice/employee-list/employee-list.component';
 import { PcListComponent } from './practice/pc-list/pc-list.component';
