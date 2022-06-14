@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { EmployeeListComponent } from './practice/employee-list/employee-list.co
 import { PcListComponent } from './practice/pc-list/pc-list.component';
 import { AnimalListComponent } from './practice/animal-list/animal-list.component';
 import { BallListComponent } from './practice/ball-list/ball-list.component';
+import { SearchComponent } from './shared/search/search.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { BallListComponent } from './practice/ball-list/ball-list.component';
     PcListComponent,
     AnimalListComponent,
     BallListComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,6 +56,7 @@ import { BallListComponent } from './practice/ball-list/ball-list.component';
     ReactiveFormsModule,
     MatInputModule,
     MatProgressBarModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
