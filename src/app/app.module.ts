@@ -14,6 +14,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTabsModule } from '@angular/material/tabs';
 
 // app
 import { AppRoutingModule } from './app-routing.module';
@@ -29,6 +30,9 @@ import { CategoriesComponent } from './features/categories/categories.component'
 import { ProductsComponent } from './features/products/products.component';
 import { AddformComponent } from './features/categories/addform/addform.component';
 import { BasketComponent } from './features/basket/basket.component';
+import { AuthComponent } from './features/auth/auth.component';
+import { SignInComponent } from './features/auth/sign-in/sign-in.component';
+import { SignUpComponent } from './features/auth/sign-up/sign-up.component';
 
 // practice
 import { CarListComponent } from './practice/car-list/car-list.component';
@@ -47,6 +51,9 @@ import { BallListComponent } from './practice/ball-list/ball-list.component';
     AddformComponent,
     SearchComponent,
     BasketComponent,
+    AuthComponent,
+    SignInComponent,
+    SignUpComponent,
 
     // practise
     CarListComponent,
@@ -72,6 +79,7 @@ import { BallListComponent } from './practice/ball-list/ball-list.component';
     MatInputModule,
     MatProgressBarModule,
     MatMenuModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

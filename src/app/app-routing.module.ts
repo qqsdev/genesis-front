@@ -9,6 +9,7 @@ import { AddformComponent } from './features/categories/addform/addform.componen
 import { CategoriesComponent } from './features/categories/categories.component';
 import { BasketComponent } from './features/basket/basket.component';
 import { ProductsComponent } from './features/products/products.component';
+import { AuthComponent } from './features/auth/auth.component';
 
 // Practise, ertaga ochiriladi
 import { EmployeeListComponent } from './practice/employee-list/employee-list.component';
@@ -18,6 +19,9 @@ import { PcListComponent } from './practice/pc-list/pc-list.component';
 import { CarListComponent } from './practice/car-list/car-list.component';
 
 const routes: Routes = [
+  // Auth
+  { path: 'auth', component: AuthComponent },
+
   {
     path: '',
     component: LayoutComponent,
@@ -39,6 +43,8 @@ const routes: Routes = [
       { path: 'employees', component: EmployeeListComponent },
       { path: 'animals', component: AnimalListComponent },
       { path: 'balls', component: BallListComponent },
+
+      { path: '', redirectTo: 'categories', pathMatch: 'full' },
     ],
   },
 ];
