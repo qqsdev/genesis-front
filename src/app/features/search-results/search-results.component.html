@@ -1,10 +1,20 @@
 <div class="flex">
-    <div class="filter">
-        <app-filters></app-filters>
+  <div class="filter">
+    <app-filters></app-filters>
+  </div>
+
+  <div class="content">
+    <div class="switch-view">
+      <button mat-icon-button aria-label="list" (click)="isGridView = false">
+        <mat-icon>view_list</mat-icon>
+      </button>
+      <button mat-icon-button aria-label="grid" (click)="isGridView = true">
+        <mat-icon>grid_view</mat-icon>
+      </button>
     </div>
-    
-    <div class="content">
-        <app-product-list></app-product-list>
-        <app-product-grid></app-product-grid>
-    </div>
+
+    <app-product-list *ngIf="isGridView == false"></app-product-list>
+
+    <app-product-grid *ngIf="isGridView == true"></app-product-grid>
+  </div>
 </div>

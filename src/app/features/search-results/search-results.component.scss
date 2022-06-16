@@ -1,13 +1,19 @@
-.filter{
-    width: 20%;
-    background-color: red;
+.filter {
+  width: 20%;
+  outline: 1px dashed red;
+  padding: 1rem;
 }
 
-.content{
-    width: 80%;
-    background: green;
+.content {
+  width: 80%;
+  outline: 1px dashed green;
+  padding: 1rem;
 }
 
-.flex{
-    display: flex;
+.flex {
+  display: flex;
+}
+
+.switch-view {
+  text-align: right;
 }
