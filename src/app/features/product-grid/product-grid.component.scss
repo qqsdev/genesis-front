@@ -1,12 +1,13 @@
 .cards-grid {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  // grid-template-columns: repeat(4, 1fr);
+  // grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+  // gap: 20px;
+  // padding: 20px;
 
   .card {
-    width: 25%;
+    padding: 1rem;
   }
 
   img {
