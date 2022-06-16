@@ -10,6 +10,7 @@ import { CategoriesComponent } from './features/categories/categories.component'
 import { BasketComponent } from './features/basket/basket.component';
 import { ProductsComponent } from './features/products/products.component';
 import { AuthComponent } from './features/auth/auth.component';
+import { SearchResultsComponent } from './features/search-results/search-results.component';
 
 // Practise, ertaga ochiriladi
 import { EmployeeListComponent } from './practice/employee-list/employee-list.component';
@@ -36,6 +37,9 @@ const routes: Routes = [
 
       // Basket
       { path: 'basket', component: BasketComponent },
+
+      // Search-results
+      { path: 'search-results', component: SearchResultsComponent },
 
       // Practice
       { path: 'cars', component: CarListComponent },

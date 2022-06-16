@@ -33,6 +33,10 @@ import { BasketComponent } from './features/basket/basket.component';
 import { AuthComponent } from './features/auth/auth.component';
 import { SignInComponent } from './features/auth/sign-in/sign-in.component';
 import { SignUpComponent } from './features/auth/sign-up/sign-up.component';
+import { SearchResultsComponent } from './features/search-results/search-results.component';
+import { FiltersComponent } from './features/filters/filters.component';
+import { ProductListComponent } from './features/product-list/product-list.component';
+import { ProductGridComponent } from './features/product-grid/product-grid.component';
 
 // practice
 import { CarListComponent } from './practice/car-list/car-list.component';
@@ -40,6 +44,7 @@ import { EmployeeListComponent } from './practice/employee-list/employee-list.co
 import { PcListComponent } from './practice/pc-list/pc-list.component';
 import { AnimalListComponent } from './practice/animal-list/animal-list.component';
 import { BallListComponent } from './practice/ball-list/ball-list.component';
+
 
 @NgModule({
   declarations: [
@@ -54,6 +59,10 @@ import { BallListComponent } from './practice/ball-list/ball-list.component';
     AuthComponent,
     SignInComponent,
     SignUpComponent,
+    SearchResultsComponent,
+    FiltersComponent,
+    ProductListComponent,
+    ProductGridComponent,
 
     // practise
     CarListComponent,
@@ -61,6 +70,7 @@ import { BallListComponent } from './practice/ball-list/ball-list.component';
     PcListComponent,
     AnimalListComponent,
     BallListComponent,
+
   ],
   imports: [
     BrowserModule,
