@@ -1,1 +1,48 @@
-<p>filters works!</p>
+<div>
+  <h5>Price</h5>
+  <div>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>min price</mat-label>
+      <input matInput #postalCode maxlength="5" placeholder="1$" />
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>max price</mat-label>
+      <input matInput #postalCode maxlength="6" placeholder="10000$" />
+    </mat-form-field>
+  </div>
+</div>
+
+<div>
+  <h5>Manufacturer</h5>
+  <div [formGroup]="toppings">
+    <p><mat-checkbox formControlName="Dell">Dell</mat-checkbox></p>
+    <p><mat-checkbox formControlName="Asus">Asus</mat-checkbox></p>
+    <p><mat-checkbox formControlName="Lenovo">Lenovo</mat-checkbox></p>
+    <p><mat-checkbox formControlName="Acer">Acer</mat-checkbox></p>
+  </div>
+</div>
+
+<div>
+  <h5>Delivery type</h5>
+  <div>
+    <mat-radio-group aria-label="Select an option">
+      <p><mat-radio-button value="1">by courier</mat-radio-button></p>
+      <p><mat-radio-button value="2">self-delivery</mat-radio-button></p>
+      <p><mat-radio-button value="3">sales points</mat-radio-button></p>
+      <p><mat-radio-button value="4">any</mat-radio-button></p>
+    </mat-radio-group>
+  </div>
+</div>
+
+<div>
+  <h5>Colors</h5>
+  <div class="colors">
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="color"></div>
+    <div class="color"></div>
+  </div>
+</div>

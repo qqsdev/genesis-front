@@ -1,0 +1,33 @@
+.colors {
+  display: flex;
+  gap: 5px;
+}
+
+.color {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.color:nth-child(1) {
+  background-color: black;
+}
+.color:nth-child(2) {
+  background-color: pink;
+}
+.color:nth-child(3) {
+  background-color: green;
+}
+.color:nth-child(4) {
+  background-color: red;
+}
+.color:nth-child(5) {
+  background-color: brown;
+}
+.color:nth-child(6) {
+  background-color: yellow;
+}
+.color:nth-child(7) {
+  background-color: violet;
+}

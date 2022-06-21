@@ -15,6 +15,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
 
 // app
 import { AppRoutingModule } from './app-routing.module';
@@ -45,7 +47,6 @@ import { PcListComponent } from './practice/pc-list/pc-list.component';
 import { AnimalListComponent } from './practice/animal-list/animal-list.component';
 import { BallListComponent } from './practice/ball-list/ball-list.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +71,6 @@ import { BallListComponent } from './practice/ball-list/ball-list.component';
     PcListComponent,
     AnimalListComponent,
     BallListComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -90,6 +90,8 @@ import { BallListComponent } from './practice/ball-list/ball-list.component';
     MatProgressBarModule,
     MatMenuModule,
     MatTabsModule,
+    MatCheckboxModule,
+    MatRadioModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
