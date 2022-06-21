@@ -5,10 +5,10 @@
 
   <div class="content">
     <div class="switch-view">
-      <button mat-icon-button aria-label="list" (click)="viewState = 'list'">
+      <button mat-icon-button aria-label="list" [class.active]="viewState == 'list'" (click)="viewState = 'list'">
         <mat-icon>view_list</mat-icon>
       </button>
-      <button mat-icon-button aria-label="grid" (click)="viewState = 'grid'">
+      <button mat-icon-button aria-label="grid" [class.active]="viewState == 'grid'" (click)="viewState = 'grid'">
         <mat-icon>grid_view</mat-icon>
       </button>
     </div>
