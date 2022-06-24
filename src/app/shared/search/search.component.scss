@@ -1,0 +1,19 @@
+:host {
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+
+  .search__input {
+    padding: 5px 0px 5px 10px;
+    background-color: #333;
+    border-radius: 5px;
+    width: 100%;
+    border: none;
+    outline: none;
+  }
+
+  .search__icon {
+    position: absolute;
+    right: 0;
+  }
+}
