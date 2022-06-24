@@ -1,0 +1,47 @@
+.basket__header {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.basket-page {
+  display: grid;
+  grid-template-columns: 6fr 2fr;
+
+  .order-list {
+    display: grid;
+    gap: 20px;
+
+    .order {
+      display: grid;
+      grid-template-columns: 0.5fr 3fr 8fr 2fr;
+      gap: 20px;
+
+      img {
+        max-width: 100%;
+      }
+
+      .order__checkbox {
+        display: grid;
+        place-items: center;
+      }
+    }
+  }
+
+  .total {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    gap: 10px;
+
+    .total__button button {
+      width: 100%;
+    }
+    .total__price {
+      background-color: #555;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 4px;
+    }
+  }
+}

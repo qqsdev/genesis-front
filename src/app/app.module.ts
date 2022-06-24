@@ -17,6 +17,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatBadgeModule } from '@angular/material/badge';
 
 // app
 import { AppRoutingModule } from './app-routing.module';
@@ -92,6 +93,7 @@ import { BallListComponent } from './practice/ball-list/ball-list.component';
     MatTabsModule,
     MatCheckboxModule,
     MatRadioModule,
+    MatBadgeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
