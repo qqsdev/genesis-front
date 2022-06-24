@@ -47,6 +47,7 @@ import { EmployeeListComponent } from './practice/employee-list/employee-list.co
 import { PcListComponent } from './practice/pc-list/pc-list.component';
 import { AnimalListComponent } from './practice/animal-list/animal-list.component';
 import { BallListComponent } from './practice/ball-list/ball-list.component';
+import { HomePageComponent } from './features/home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { BallListComponent } from './practice/ball-list/ball-list.component';
     PcListComponent,
     AnimalListComponent,
     BallListComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,

@@ -18,6 +18,7 @@ import { AnimalListComponent } from './practice/animal-list/animal-list.componen
 import { BallListComponent } from './practice/ball-list/ball-list.component';
 import { PcListComponent } from './practice/pc-list/pc-list.component';
 import { CarListComponent } from './practice/car-list/car-list.component';
+import { HomePageComponent } from './features/home-page/home-page.component';
 
 const routes: Routes = [
   // Auth
@@ -27,6 +28,9 @@ const routes: Routes = [
     path: '',
     component: LayoutComponent,
     children: [
+      // Home-page
+      { path: '', component: HomePageComponent },
+
       // Categories
       { path: 'categories', component: CategoriesComponent },
       { path: 'categories/add', component: AddformComponent },
@@ -47,8 +51,6 @@ const routes: Routes = [
       { path: 'employees', component: EmployeeListComponent },
       { path: 'animals', component: AnimalListComponent },
       { path: 'balls', component: BallListComponent },
-
-      { path: '', redirectTo: 'categories', pathMatch: 'full' },
     ],
   },
 ];
