@@ -50,6 +50,11 @@ import { AnimalListComponent } from './practice/animal-list/animal-list.componen
 import { BallListComponent } from './practice/ball-list/ball-list.component';
 import { HomePageComponent } from './features/home-page/home-page.component';
 
+// firebase
+import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -98,6 +103,11 @@ import { HomePageComponent } from './features/home-page/home-page.component';
     MatCheckboxModule,
     MatRadioModule,
     MatBadgeModule,
+
+    //Firebase
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideFirestore(() => getFirestore()),
+
   ],
   providers: [],
   bootstrap: [AppComponent],
