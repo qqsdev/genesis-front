@@ -40,6 +40,7 @@ import { SearchResultsComponent } from './features/search-results/search-results
 import { FiltersComponent } from './features/filters/filters.component';
 import { ProductListComponent } from './features/product-list/product-list.component';
 import { ProductGridComponent } from './features/product-grid/product-grid.component';
+import { ProductPageComponent } from './features/products/product-page/product-page.component';
 
 // practice
 import { CarListComponent } from './practice/car-list/car-list.component';
@@ -66,6 +67,7 @@ import { HomePageComponent } from './features/home-page/home-page.component';
     FiltersComponent,
     ProductListComponent,
     ProductGridComponent,
+    ProductPageComponent,
 
     // practise
     CarListComponent,

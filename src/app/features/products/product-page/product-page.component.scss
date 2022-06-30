@@ -1,0 +1,57 @@
+.order{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr;
+    gap: 20px;
+
+    .order__img{
+        width: 100%;
+
+        img{
+            width: 100%;
+        }
+    }
+
+    .color_img{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+
+        img{
+            width: 100%;
+        }
+    }
+
+    .briefly_info{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 50px;
+    }
+
+    .card_price{
+        background: #555;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+    }
+}
+
+.specifications_card{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+.reviews{
+    margin-top: 50px;
+}
+
+.reviews__card{
+    display: grid;
+    grid-template-columns: 1fr 5fr 2fr;
+    gap: 20px;
+
+    .img{
+        img{
+            width: 100%;
+        }
+    }
+}

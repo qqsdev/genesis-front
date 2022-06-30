@@ -19,6 +19,9 @@ import { BallListComponent } from './practice/ball-list/ball-list.component';
 import { PcListComponent } from './practice/pc-list/pc-list.component';
 import { CarListComponent } from './practice/car-list/car-list.component';
 import { HomePageComponent } from './features/home-page/home-page.component';
+import { ProductPageComponent } from './features/products/product-page/product-page.component';
+
+// TODO: добавить routing для одного продукта
 
 const routes: Routes = [
   // Auth
@@ -38,6 +41,9 @@ const routes: Routes = [
 
       // Products
       { path: 'products', component: ProductsComponent },
+
+      // Product page
+      { path: 'product-page', component: ProductPageComponent },
 
       // Basket
       { path: 'basket', component: BasketComponent },
