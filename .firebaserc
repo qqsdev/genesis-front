@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "genesis-5e6f8": {
+      "hosting": {
+        "genesis-front": [
+          "genesis-5e6f8"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "genesis-5e6f8"
+  }
+}
