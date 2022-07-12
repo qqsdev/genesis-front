@@ -6,16 +6,14 @@ const routes: Routes = [
   { path: '', component: AdminComponent },
   {
     path: 'categories',
-    loadChildren: () =>
-      import('./categories/categories.module').then((m) => m.CategoriesModule),
+    loadChildren: () => import('./categories/categories.module').then((m) => m.CategoriesModule),
   },
   {
     path: 'products',
-    loadChildren: () =>
-      import('./products/products.module').then((m) => m.ProductsModule),
+    loadChildren: () => import('./products/products.module').then((m) => m.ProductsModule),
   },
-  { path: 'users', loadChildren: () => import('./users/users.module').then(m => m.UsersModule) },
-  { path: 'languages', loadChildren: () => import('./languages/languages.module').then(m => m.LanguagesModule) },
+  { path: 'users', loadChildren: () => import('./users/users.module').then((m) => m.UsersModule) },
+  { path: 'languages', loadChildren: () => import('./languages/languages.module').then((m) => m.LanguagesModule) },
 ];
 
 @NgModule({
