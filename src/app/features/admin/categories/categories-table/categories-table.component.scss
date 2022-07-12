@@ -1,9 +1,30 @@
-table{
-    width: 100%;
-}
+table {
+  width: 100%;
 
-td img{
-    width: 150px;
-    height: 100px;
+  img {
+    width: 100px;
+    height: 60px;
     object-fit: cover;
+  }
+
+  .mat-column-index {
+    width: 60px;
+  }
+
+  .mat-column-imageUrl {
+    width: 120px;
+  }
+
+  .mat-column-name {
+    width: auto;
+  }
+
+  .mat-column-actions {
+    width: 200px;
+  }
+
+  .actions {
+    display: flex;
+    gap: 1rem;
+  }
 }

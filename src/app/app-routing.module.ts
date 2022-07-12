@@ -11,13 +11,6 @@ import { BasketComponent } from './features/basket/basket.component';
 import { ProductsComponent } from './features/products/products.component';
 import { AuthComponent } from './features/auth/auth.component';
 import { SearchResultsComponent } from './features/search-results/search-results.component';
-
-// Practise, ertaga ochiriladi
-import { EmployeeListComponent } from './practice/employee-list/employee-list.component';
-import { AnimalListComponent } from './practice/animal-list/animal-list.component';
-import { BallListComponent } from './practice/ball-list/ball-list.component';
-import { PcListComponent } from './practice/pc-list/pc-list.component';
-import { CarListComponent } from './practice/car-list/car-list.component';
 import { HomePageComponent } from './features/home-page/home-page.component';
 import { ProductPageComponent } from './features/products/product-page/product-page.component';
 
@@ -51,15 +44,10 @@ const routes: Routes = [
       // Search-results
       { path: 'search-results', component: SearchResultsComponent },
 
-      // Practice
-      { path: 'cars', component: CarListComponent },
-      { path: 'pcs', component: PcListComponent },
-      { path: 'employees', component: EmployeeListComponent },
-      { path: 'animals', component: AnimalListComponent },
-      { path: 'balls', component: BallListComponent },
+      // admin
+      { path: 'admin', loadChildren: () => import('./features/admin/admin.module').then((m) => m.AdminModule) },
     ],
   },
-  { path: 'admin', loadChildren: () => import('./features/admin/admin.module').then(m => m.AdminModule) },
 ];
 
 @NgModule({
