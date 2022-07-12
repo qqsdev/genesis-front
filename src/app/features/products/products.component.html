@@ -1,6 +1,7 @@
+
 <ul>
   <li *ngFor="let item of item$ | async">
-    {{ item.name }} {{ item.description }} {{ item.price }}
+    {{ item.name }} {{ item.description }} ${{ item.price }}
   </li>
 </ul>
 
@@ -16,4 +17,3 @@
     </mat-card>
   </ng-container>
 </div>
-
