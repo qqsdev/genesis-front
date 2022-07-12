@@ -32,7 +32,7 @@
       <th mat-header-cell *matHeaderCellDef>actions</th>
       <td mat-cell *matCellDef="let element">
         <button mat-button><mat-icon>edit</mat-icon></button>
-        <button mat-button><mat-icon>delete</mat-icon></button>
+        <button mat-button (click)="remove(element.uid)"><mat-icon>delete</mat-icon></button>
       </td>
     </ng-container>
 
