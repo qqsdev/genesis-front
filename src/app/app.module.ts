@@ -54,16 +54,15 @@ import { HomePageComponent } from './features/home-page/home-page.component';
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
+import { LayoutModule } from './shared/layout/layout.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent,
     SideNavComponent,
     CategoriesComponent,
     ProductsComponent,
     AddformComponent,
-    SearchComponent,
     BasketComponent,
     AuthComponent,
     SignInComponent,
@@ -87,9 +86,9 @@ import { environment } from 'src/environments/environment';
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    LayoutModule,
 
     // material
-    MatToolbarModule,
     MatIconModule,
     MatButtonModule,
     MatListModule,
@@ -113,3 +112,4 @@ import { environment } from 'src/environments/environment';
   bootstrap: [AppComponent],
 })
 export class AppModule {}
+

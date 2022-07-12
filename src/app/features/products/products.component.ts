@@ -14,7 +14,7 @@ export class ProductsComponent implements OnInit {
   public item$: Observable<any[]>;
 
   constructor(firestore: Firestore, private productsService: ProductsService) {
-    const categories = collection(firestore, 'categories');
+    const categories = collection(firestore, 'categories/bTlTy7bdCOkSMghqqHkV/products');
     this.item$ = collectionData(categories);
   }
 

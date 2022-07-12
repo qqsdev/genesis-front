@@ -59,6 +59,7 @@ const routes: Routes = [
       { path: 'balls', component: BallListComponent },
     ],
   },
+  { path: 'admin', loadChildren: () => import('./features/admin/admin.module').then(m => m.AdminModule) },
 ];
 
 @NgModule({
