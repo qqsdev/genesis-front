@@ -4,7 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 
 // Material
-import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
@@ -24,9 +23,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 // shared
-import { LayoutComponent } from './shared/layout/layout.component';
 import { SideNavComponent } from './shared/side-nav/side-nav.component';
-import { SearchComponent } from './shared/search/search.component';
+import { LayoutModule } from './shared/layout/layout.module';
 
 // features
 import { CategoriesComponent } from './features/categories/categories.component';
@@ -41,20 +39,13 @@ import { FiltersComponent } from './features/filters/filters.component';
 import { ProductListComponent } from './features/product-list/product-list.component';
 import { ProductGridComponent } from './features/product-grid/product-grid.component';
 import { ProductPageComponent } from './features/products/product-page/product-page.component';
-
-// practice
-import { CarListComponent } from './practice/car-list/car-list.component';
-import { EmployeeListComponent } from './practice/employee-list/employee-list.component';
-import { PcListComponent } from './practice/pc-list/pc-list.component';
-import { AnimalListComponent } from './practice/animal-list/animal-list.component';
-import { BallListComponent } from './practice/ball-list/ball-list.component';
 import { HomePageComponent } from './features/home-page/home-page.component';
 
 // firebase
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
-import { LayoutModule } from './shared/layout/layout.module';
+
 
 @NgModule({
   declarations: [
@@ -72,13 +63,6 @@ import { LayoutModule } from './shared/layout/layout.module';
     ProductListComponent,
     ProductGridComponent,
     ProductPageComponent,
-
-    // practise
-    CarListComponent,
-    EmployeeListComponent,
-    PcListComponent,
-    AnimalListComponent,
-    BallListComponent,
     HomePageComponent,
   ],
   imports: [
